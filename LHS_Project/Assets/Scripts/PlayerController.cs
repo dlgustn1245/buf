@@ -71,7 +71,7 @@ public class PlayerController : MonoBehaviour
             invincibleTimer = timeInvincible;
 
             Instantiate(explosion, rb2d.position, Quaternion.identity);
-
+   
             if (collision.gameObject.CompareTag("Asteroid")) return;
             Destroy(collision.gameObject);
         }

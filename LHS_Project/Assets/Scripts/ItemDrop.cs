@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DroppingController : MonoBehaviour
+public class ItemDrop : MonoBehaviour
 {
     public float speed;
+
     float rotate = 0.0f;
     Rigidbody2D rb2d;
     

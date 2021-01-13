@@ -71,7 +71,6 @@ public class EnemyController : MonoBehaviour
                     Instantiate(attackDamage, rb2d.position, Quaternion.identity);
                 }
                 Destroy(gameObject);
-                Destroy(collision.gameObject);
             }
             Destroy(collision.gameObject);
         }

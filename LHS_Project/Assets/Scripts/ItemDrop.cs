@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class ItemDrop : MonoBehaviour
 {
+    public float xMin, xMax, yMin, yMax;
     public float speed;
+    
+    Rigidbody2D rb2d;
 
     float rotate = 0.0f;
-    Rigidbody2D rb2d;
-    
+
+    int flagX = 1, flagY = 1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,15 +31,24 @@ public class ItemDrop : MonoBehaviour
     void FixedUpdate()
     {
         Vector2 position = rb2d.position;
-        position.y -= speed * Time.deltaTime;
+
+        position.x += speed * flagX * Time.deltaTime;
+        position.y -= speed * flagY * Time.deltaTime;
+
+        if (position.x >= xMax || position.x <= xMin)
+        {
+            flagX = -flagX;
+        }
+        if (position.y >= yMax || position.y <= yMin)
+        {
+            flagY = -flagY;
+        }
 
         rb2d.MovePosition(position);
+
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, rotate));
         rotate += 3.0f;
-    }
 
-    void OnBecameInvisible()
-    {
-        Destroy(gameObject);
+        Destroy(gameObject, 6.0f);
     }
 }

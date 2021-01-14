@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6320229969126913726}
   m_Layer: 0
   m_Name: AttackDamage
-  m_TagString: AttackDamage
+  m_TagString: AttackDamageItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104,7 +104,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 1
+  m_Constraints: 0
 --- !u!60 &5285453893947900378
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -326,4 +326,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8120d35298e46f4191588079c143712, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 3
+  xMin: -2.7
+  xMax: 2.7
+  yMin: -0.6
+  yMax: 6.6

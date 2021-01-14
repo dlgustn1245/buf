@@ -843,35 +843,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3221786215132624710, guid: ea4e0e23e7320bd479a88359db76a543,
-        type: 3}
-      propertyPath: speed
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 4701148683895876106, guid: ea4e0e23e7320bd479a88359db76a543,
         type: 3}
       propertyPath: m_Name
       value: Asteroid
       objectReference: {fileID: 0}
-    - target: {fileID: 4701148683895876118, guid: ea4e0e23e7320bd479a88359db76a543,
-        type: 3}
-      propertyPath: m_SortingLayerID
-      value: 319910511
-      objectReference: {fileID: 0}
-    - target: {fileID: 4701148683895876118, guid: ea4e0e23e7320bd479a88359db76a543,
-        type: 3}
-      propertyPath: m_SortingLayer
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4701148683895876119, guid: ea4e0e23e7320bd479a88359db76a543,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.81
+      value: 0.77
       objectReference: {fileID: 0}
     - target: {fileID: 4701148683895876119, guid: ea4e0e23e7320bd479a88359db76a543,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.6
+      value: 2.61
       objectReference: {fileID: 0}
     - target: {fileID: 4701148683895876119, guid: ea4e0e23e7320bd479a88359db76a543,
         type: 3}
@@ -932,37 +917,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy01
       objectReference: {fileID: 0}
-    - target: {fileID: 1816567543946992930, guid: 62d02d413701cb340b629d605dd12d5e,
-        type: 3}
-      propertyPath: maxStamina
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1816567543946992930, guid: 62d02d413701cb340b629d605dd12d5e,
-        type: 3}
-      propertyPath: attackDamage
-      value: 
-      objectReference: {fileID: 9145916834332643292, guid: eee904b9994e22e41b4e3b898b18246a,
-        type: 3}
-    - target: {fileID: 1816567543946992930, guid: 62d02d413701cb340b629d605dd12d5e,
-        type: 3}
-      propertyPath: flame
-      value: 
-      objectReference: {fileID: 6484369525137652046, guid: b7a42af9911935e4a82befb15431b2bd,
-        type: 3}
-    - target: {fileID: 1816567543946992930, guid: 62d02d413701cb340b629d605dd12d5e,
-        type: 3}
-      propertyPath: speed
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 1816567543946992932, guid: 62d02d413701cb340b629d605dd12d5e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.6
+      value: -2.2
       objectReference: {fileID: 0}
     - target: {fileID: 1816567543946992932, guid: 62d02d413701cb340b629d605dd12d5e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.63
+      value: 6.6
       objectReference: {fileID: 0}
     - target: {fileID: 1816567543946992932, guid: 62d02d413701cb340b629d605dd12d5e,
         type: 3}
@@ -1009,16 +972,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1816567543946992933, guid: 62d02d413701cb340b629d605dd12d5e,
-        type: 3}
-      propertyPath: m_SortingLayerID
-      value: 319910511
-      objectReference: {fileID: 0}
-    - target: {fileID: 1816567543946992933, guid: 62d02d413701cb340b629d605dd12d5e,
-        type: 3}
-      propertyPath: m_SortingLayer
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62d02d413701cb340b629d605dd12d5e, type: 3}
 --- !u!1001 &3700301701546301484
@@ -1028,16 +981,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3700301700643933240, guid: 4d64abd1c8cae6849ab4e4f7268896f2,
-        type: 3}
-      propertyPath: m_SortingLayerID
-      value: 319910511
-      objectReference: {fileID: 0}
-    - target: {fileID: 3700301700643933240, guid: 4d64abd1c8cae6849ab4e4f7268896f2,
-        type: 3}
-      propertyPath: m_SortingLayer
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3700301700643933241, guid: 4d64abd1c8cae6849ab4e4f7268896f2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1098,28 +1041,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy03
       objectReference: {fileID: 0}
-    - target: {fileID: 3700301700643933247, guid: 4d64abd1c8cae6849ab4e4f7268896f2,
-        type: 3}
-      propertyPath: maxStamina
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3700301700643933247, guid: 4d64abd1c8cae6849ab4e4f7268896f2,
-        type: 3}
-      propertyPath: attackDamage
-      value: 
-      objectReference: {fileID: 9145916834332643292, guid: eee904b9994e22e41b4e3b898b18246a,
-        type: 3}
-    - target: {fileID: 3700301700643933247, guid: 4d64abd1c8cae6849ab4e4f7268896f2,
-        type: 3}
-      propertyPath: flame
-      value: 
-      objectReference: {fileID: 6484369525137652046, guid: b7a42af9911935e4a82befb15431b2bd,
-        type: 3}
-    - target: {fileID: 3700301700643933247, guid: 4d64abd1c8cae6849ab4e4f7268896f2,
-        type: 3}
-      propertyPath: speed
-      value: 0.5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d64abd1c8cae6849ab4e4f7268896f2, type: 3}
 --- !u!1001 &6619787205249101880
@@ -1129,16 +1050,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6619787204405801362, guid: 8613607eb4a18854c8462859857e4ef7,
-        type: 3}
-      propertyPath: m_SortingLayerID
-      value: 319910511
-      objectReference: {fileID: 0}
-    - target: {fileID: 6619787204405801362, guid: 8613607eb4a18854c8462859857e4ef7,
-        type: 3}
-      propertyPath: m_SortingLayer
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 6619787204405801363, guid: 8613607eb4a18854c8462859857e4ef7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1204,28 +1115,6 @@ PrefabInstance:
       propertyPath: healthText
       value: 
       objectReference: {fileID: 1683008856}
-    - target: {fileID: 6619787204405801375, guid: 8613607eb4a18854c8462859857e4ef7,
-        type: 3}
-      propertyPath: laser
-      value: 
-      objectReference: {fileID: 3282683212411365683, guid: 5b4e7d208a5ce5943a925ae1caf74cd6,
-        type: 3}
-    - target: {fileID: 6619787204405801375, guid: 8613607eb4a18854c8462859857e4ef7,
-        type: 3}
-      propertyPath: explosion
-      value: 
-      objectReference: {fileID: 7410711703194643236, guid: ed92132fc68bc084cb0f39959b0fa2a4,
-        type: 3}
-    - target: {fileID: 6619787204405801375, guid: 8613607eb4a18854c8462859857e4ef7,
-        type: 3}
-      propertyPath: shootDelay
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6619787204405801375, guid: 8613607eb4a18854c8462859857e4ef7,
-        type: 3}
-      propertyPath: maxHealth
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8613607eb4a18854c8462859857e4ef7, type: 3}
 --- !u!1001 &7480270590742601052
@@ -1235,38 +1124,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7480270590738153800, guid: cf274a1957c9319438f38e3be249acb3,
-        type: 3}
-      propertyPath: maxStamina
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7480270590738153800, guid: cf274a1957c9319438f38e3be249acb3,
-        type: 3}
-      propertyPath: attackDamage
-      value: 
-      objectReference: {fileID: 9145916834332643292, guid: eee904b9994e22e41b4e3b898b18246a,
-        type: 3}
-    - target: {fileID: 7480270590738153800, guid: cf274a1957c9319438f38e3be249acb3,
-        type: 3}
-      propertyPath: flame
-      value: 
-      objectReference: {fileID: 6484369525137652046, guid: b7a42af9911935e4a82befb15431b2bd,
-        type: 3}
-    - target: {fileID: 7480270590738153800, guid: cf274a1957c9319438f38e3be249acb3,
-        type: 3}
-      propertyPath: speed
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7480270590738153801, guid: cf274a1957c9319438f38e3be249acb3,
-        type: 3}
-      propertyPath: m_SortingLayerID
-      value: 319910511
-      objectReference: {fileID: 0}
-    - target: {fileID: 7480270590738153801, guid: cf274a1957c9319438f38e3be249acb3,
-        type: 3}
-      propertyPath: m_SortingLayer
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 7480270590738153802, guid: cf274a1957c9319438f38e3be249acb3,
         type: 3}
       propertyPath: m_LocalPosition.x

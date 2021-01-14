@@ -142,4 +142,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 6
   yMax: 7
-  flame: {fileID: 6484369525137652046, guid: b7a42af9911935e4a82befb15431b2bd, type: 3}
+  flamePrefab: {fileID: 6484369525137652046, guid: b7a42af9911935e4a82befb15431b2bd,
+    type: 3}

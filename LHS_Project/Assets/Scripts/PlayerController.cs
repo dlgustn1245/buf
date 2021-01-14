@@ -7,21 +7,28 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public static int currentDamage = 1;
+
     public float xMin, xMax, yMin, yMax;
     public float timeInvincible = 2.0f;
     public float shootDelay = 0.5f;
     public float speed;
+
     public int maxDamage = 3;
+
     public GameObject laser;
-    public GameObject explosion;
+    public GameObject explosionPrefab;
     public Text healthText;
+
     float horizontal, vertical;
     float shootTimer;
     float invincibleTimer;
+
     bool canShoot = true;
     bool isInvincible = false;
+
     int maxHealth = 3;
     int currentHealth;
+
     Rigidbody2D rb2d;
     
     // Start is called before the first frame update
@@ -68,14 +75,14 @@ public class PlayerController : MonoBehaviour
 
             ChangeHealth(-1);
             isInvincible = true;
-            invincibleTimer = timeInvincible;
 
-            Instantiate(explosion, rb2d.position, Quaternion.identity);
-   
+            GameObject explosion = Instantiate(explosionPrefab, rb2d.position, Quaternion.identity) as GameObject;
+            Destroy(explosion, 0.8f);
+
             if (collision.gameObject.CompareTag("Asteroid")) return;
             Destroy(collision.gameObject);
         }
-        else if(collision.gameObject.CompareTag("Health"))
+        else if(collision.gameObject.CompareTag("HealthItem"))
         {
             if(currentHealth < maxHealth)
             {
@@ -83,7 +90,7 @@ public class PlayerController : MonoBehaviour
                 Destroy(collision.gameObject);
             }
         }
-        else if (collision.gameObject.CompareTag("AttackSpeed"))
+        else if (collision.gameObject.CompareTag("AttackSpeedItem"))
         {
             if(shootDelay >= 0.3f)
             {
@@ -91,7 +98,7 @@ public class PlayerController : MonoBehaviour
                 Destroy(collision.gameObject);
             }
         }
-        else if (collision.gameObject.CompareTag("AttackDamage"))
+        else if (collision.gameObject.CompareTag("AttackDamageItem"))
         {
             if (currentDamage < maxDamage)
             {

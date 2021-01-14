@@ -6,7 +6,8 @@ public class LaserController : MonoBehaviour
 {
     public float speed;
     public float yMax;
-    public GameObject flame;
+
+    public GameObject flamePrefab;
     Rigidbody2D rb2d;
     
     // Start is called before the first frame update
@@ -27,6 +28,7 @@ public class LaserController : MonoBehaviour
     {
         Vector2 position = rb2d.position;
         position.y += speed * Time.deltaTime;
+
         rb2d.MovePosition(position);
     }
 
@@ -34,14 +36,12 @@ public class LaserController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            Instantiate(flame, rb2d.position, Quaternion.identity);
+            GameObject flame = Instantiate(flamePrefab, rb2d.position, Quaternion.identity) as GameObject;
+            Destroy(flame, 0.8f);
+
             Destroy(gameObject);
         }
-        else if (collision.gameObject.CompareTag("Bomb"))
-        {
-            Destroy(gameObject);
-        }
-        else if (collision.gameObject.CompareTag("Asteroid"))
+        else if (collision.gameObject.CompareTag("Bomb") || collision.gameObject.CompareTag("Asteroid"))
         {
             Destroy(gameObject);
         }

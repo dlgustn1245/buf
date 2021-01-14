@@ -7,10 +7,13 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     public static GameController Instance;
+
     public GameObject gameoverText;
     public Text scoreText;
     public Text healthText;
+
     public bool gameOver = false;
+
     int score = 0;
 
     private void Awake()

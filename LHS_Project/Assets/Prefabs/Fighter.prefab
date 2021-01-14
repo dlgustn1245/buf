@@ -70,8 +70,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -458331007
-  m_SortingLayer: 3
+  m_SortingLayerID: 319910511
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: dcc8062216ede7440b8138dd3945a76b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -185,15 +185,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecaadc9e1d995f648aa9fda01a15b31d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
   xMin: -2.7
   xMax: 2.7
   yMin: -0.7
   yMax: 3.5
-  shootDelay: 0.4
   timeInvincible: 2
-  maxHealth: 3
-  laser: {fileID: 6095619504160950901, guid: 5b4e7d208a5ce5943a925ae1caf74cd6, type: 3}
-  explosion: {fileID: 626748638515595636, guid: ed92132fc68bc084cb0f39959b0fa2a4,
+  shootDelay: 0.5
+  speed: 3
+  maxDamage: 3
+  laser: {fileID: 3282683212411365683, guid: 5b4e7d208a5ce5943a925ae1caf74cd6, type: 3}
+  explosionPrefab: {fileID: 7410711703194643236, guid: ed92132fc68bc084cb0f39959b0fa2a4,
     type: 3}
   healthText: {fileID: 0}

@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 3295003232593826394}
   - component: {fileID: 739792262}
   m_Layer: 0
-  m_Name: heart
-  m_TagString: Health
+  m_Name: Heart
+  m_TagString: HealthItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104,7 +104,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 1
+  m_Constraints: 0
 --- !u!60 &3295003232593826394
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -338,4 +338,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8120d35298e46f4191588079c143712, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 3
+  xMin: -2.7
+  xMax: 2.7
+  yMin: -0.6
+  yMax: 6.6

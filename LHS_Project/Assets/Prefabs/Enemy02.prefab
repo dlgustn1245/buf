@@ -70,8 +70,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -458331007
-  m_SortingLayer: 3
+  m_SortingLayerID: 319910511
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: cb9c3c54d0756e74fabc7bf1843ab8c4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -98,11 +98,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   score: 35
-  explosion: {fileID: 7410711703194643236, guid: ed92132fc68bc084cb0f39959b0fa2a4,
+  maxStamina: 2
+  explosionPrefab: {fileID: 7410711703194643236, guid: ed92132fc68bc084cb0f39959b0fa2a4,
     type: 3}
   bomb: {fileID: 2057390096827092733, guid: a1d176d080fa1874fae72287c9f40955, type: 3}
-  heart: {fileID: 3295003232593826389, guid: ef6a91bbf1ef0064fab190aa29d4c1cf, type: 3}
-  attackSpeed: {fileID: 5184636194162076510, guid: 35b00fdc4316eda40a4f7345e014e9b9,
+  heartItem: {fileID: 3295003232593826389, guid: ef6a91bbf1ef0064fab190aa29d4c1cf,
+    type: 3}
+  attackSpeedItem: {fileID: 5184636194162076510, guid: 35b00fdc4316eda40a4f7345e014e9b9,
+    type: 3}
+  attackDamageItem: {fileID: 9145916834332643292, guid: eee904b9994e22e41b4e3b898b18246a,
     type: 3}
 --- !u!50 &7480270590738153807
 Rigidbody2D:

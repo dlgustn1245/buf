@@ -7,10 +7,10 @@ TagManager:
   - Enemy
   - Laser
   - Bomb
-  - Health
   - Asteroid
-  - AttackSpeed
-  - AttackDamage
+  - AttackDamageItem
+  - AttackSpeedItem
+  - HealthItem
   layers:
   - Default
   - TransparentFX

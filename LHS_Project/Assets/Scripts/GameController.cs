@@ -9,6 +9,8 @@ public class GameController : MonoBehaviour
     public static GameController Instance;
 
     public GameObject gameoverText;
+    public GameObject readyText;
+
     public Text scoreText;
     public Text healthText;
 
@@ -26,6 +28,12 @@ public class GameController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    void Start()
+    {
+        readyText.SetActive(false);
+        StartCoroutine("ShowReadyText");
     }
 
     // Update is called once per frame
@@ -47,5 +55,19 @@ public class GameController : MonoBehaviour
     {
         gameoverText.SetActive(true);
         gameOver = true;
+    }
+
+    IEnumerator ShowReadyText()
+    {
+        int cnt = 0;
+        while(cnt < 3)
+        {
+            readyText.SetActive(true);
+            yield return new WaitForSeconds(0.5f);
+            readyText.SetActive(false);
+            yield return new WaitForSeconds(0.5f);
+
+            ++cnt;
+        }
     }
 }

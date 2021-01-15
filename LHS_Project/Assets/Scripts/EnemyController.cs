@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    public GameObject explosionPrefab;
     public GameObject bomb;
     public GameObject heartItem;
     public GameObject attackSpeedItem;
+    public GameObject explosionPrefab;
     public GameObject attackDamageItem;
+
+    public float speed;
 
     public int score;
     public int maxStamina;
 
     int currentStamina;
-
-    public float speed;
 
     Rigidbody2D rb2d;
 

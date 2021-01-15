@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
     int currentHealth;
 
     Rigidbody2D rb2d;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
         if (isInvincible)
         {
             invincibleTimer -= Time.deltaTime;
-            if(invincibleTimer < 0)
+            if (invincibleTimer <= 0)
             {
                 isInvincible = false;
             }
@@ -82,9 +82,9 @@ public class PlayerController : MonoBehaviour
             if (collision.gameObject.CompareTag("Asteroid")) return;
             Destroy(collision.gameObject);
         }
-        else if(collision.gameObject.CompareTag("HealthItem"))
+        else if (collision.gameObject.CompareTag("HealthItem"))
         {
-            if(currentHealth < maxHealth)
+            if (currentHealth < maxHealth)
             {
                 ChangeHealth(1);
                 Destroy(collision.gameObject);
@@ -92,7 +92,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("AttackSpeedItem"))
         {
-            if(shootDelay >= 0.3f)
+            if (shootDelay >= 0.3f)
             {
                 shootDelay -= 0.05f;
                 Destroy(collision.gameObject);
@@ -112,18 +112,19 @@ public class PlayerController : MonoBehaviour
     {
         if (canShoot)
         {
-            if(shootTimer >= shootDelay)
+            if (shootTimer >= shootDelay)
             {
                 Instantiate(laser, rb2d.position + Vector2.up * 1.2f, Quaternion.identity);
                 shootTimer = 0;
             }
+
+            shootTimer += Time.deltaTime;
         }
-        shootTimer += Time.deltaTime;
     }
 
     void ChangeHealth(int amount)
     {
-        if(amount < 0)
+        if (amount < 0)
         {
             if (isInvincible) return;
             invincibleTimer = timeInvincible;
@@ -131,12 +132,12 @@ public class PlayerController : MonoBehaviour
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
 
         healthText.text = "Health : ";
-        for(int i = 0; i < currentHealth; i++)
+        for (int i = 0; i < currentHealth; i++)
         {
             healthText.text += "♥ ";
         }
 
-        if(currentHealth == 0)
+        if (currentHealth == 0)
         {
             GameController.Instance.FighterDead();
             Destroy(gameObject);

@@ -19,14 +19,12 @@ public class EnemyController : MonoBehaviour
 
     Rigidbody2D rb2d;
 
-    // Start is called before the first frame update
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
         currentStamina = maxStamina;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (GameController.Instance.gameOver)
@@ -48,6 +46,7 @@ public class EnemyController : MonoBehaviour
         if (collision.gameObject.CompareTag("Laser"))
         {
             currentStamina -= PlayerController.currentDamage;
+            
             if (currentStamina <= 0)
             {
                 GameController.Instance.FighterScored(score);
@@ -56,6 +55,7 @@ public class EnemyController : MonoBehaviour
                 Destroy(explosion, 0.8f);
 
                 int randDrop = Random.Range(0, 25); //0~24
+
                 if (randDrop < 3) //0, 1, 2
                 {
                     Instantiate(bomb, rb2d.position, Quaternion.identity);

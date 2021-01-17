@@ -13,7 +13,6 @@ public class SpawnManager : MonoBehaviour
 
     float randX;
 
-    //Start is called before the first frame update
     void Start()
     {
         InvokeRepeating("SpawnEnemy01", 4, 3);

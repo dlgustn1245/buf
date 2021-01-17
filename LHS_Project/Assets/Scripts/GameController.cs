@@ -12,7 +12,6 @@ public class GameController : MonoBehaviour
     public GameObject readyText;
 
     public Text scoreText;
-    public Text healthText;
 
     public bool gameOver = false;
 
@@ -36,7 +35,6 @@ public class GameController : MonoBehaviour
         StartCoroutine("ShowReadyText");
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (gameOver && Input.GetKeyDown("space"))

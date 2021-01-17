@@ -7,13 +7,11 @@ public class BackgroundScroll : MonoBehaviour
     float scrollSpeed = 0.3f;
     Material material;
 
-    // Start is called before the first frame update
     void Start()
     {
         material = GetComponent<Renderer>().material;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (GameController.Instance.gameOver)

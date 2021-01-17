@@ -11,34 +11,30 @@ public class PlayerController : MonoBehaviour
     public float xMin, xMax, yMin, yMax;
     public float timeInvincible = 2.0f;
     public float shootDelay = 0.5f;
-    public float speed;
-
-    public int maxDamage = 3;
+    public float speed = 4.0f;
 
     public GameObject laser;
     public GameObject explosionPrefab;
     public Text healthText;
 
     float horizontal, vertical;
-    float shootTimer;
-    float invincibleTimer;
+    float shootCooldown;
+    float invincibleCooldown;
 
-    bool canShoot = true;
     bool isInvincible = false;
 
-    int maxHealth = 3;
     int currentHealth;
-
+    int maxHealth = 3;
+    int maxDamage = 3;
+    
     Rigidbody2D rb2d;
 
-    // Start is called before the first frame update
     void Start()
-    {
+    { 
         rb2d = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
     }
 
-    // Update is called once per frame
     void Update()
     {
         horizontal = Input.GetAxis("Horizontal");
@@ -46,8 +42,8 @@ public class PlayerController : MonoBehaviour
 
         if (isInvincible)
         {
-            invincibleTimer -= Time.deltaTime;
-            if (invincibleTimer <= 0)
+            invincibleCooldown -= Time.deltaTime;
+            if (invincibleCooldown <= 0)
             {
                 isInvincible = false;
             }
@@ -69,57 +65,53 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Bomb") || collision.gameObject.CompareTag("Asteroid"))
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Asteroid"))
         {
-            if (isInvincible) return;
-
             ChangeHealth(-1);
-            isInvincible = true;
+        }
+    }
 
-            GameObject explosion = Instantiate(explosionPrefab, rb2d.position, Quaternion.identity) as GameObject;
-            Destroy(explosion, 0.8f);
-
-            if (collision.gameObject.CompareTag("Asteroid")) return;
-            Destroy(collision.gameObject);
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Bomb"))
+        {
+            ChangeHealth(-1);
         }
         else if (collision.gameObject.CompareTag("HealthItem"))
         {
-            if (currentHealth < maxHealth)
+            if (currentHealth >= maxHealth) return;
+            else
             {
                 ChangeHealth(1);
-                Destroy(collision.gameObject);
             }
         }
         else if (collision.gameObject.CompareTag("AttackSpeedItem"))
         {
-            if (shootDelay >= 0.3f)
+            if (shootDelay <= 0.25f) return;
+            else
             {
                 shootDelay -= 0.05f;
-                Destroy(collision.gameObject);
             }
         }
         else if (collision.gameObject.CompareTag("AttackDamageItem"))
         {
-            if (currentDamage < maxDamage)
+            if (currentDamage >= maxDamage) return;
+            else
             {
                 ++currentDamage;
-                Destroy(collision.gameObject);
             }
         }
+        Destroy(collision.gameObject);
     }
 
     void ShootLaser()
     {
-        if (canShoot)
+        if (shootCooldown >= shootDelay)
         {
-            if (shootTimer >= shootDelay)
-            {
-                Instantiate(laser, rb2d.position + Vector2.up * 1.2f, Quaternion.identity);
-                shootTimer = 0;
-            }
-
-            shootTimer += Time.deltaTime;
+            Instantiate(laser, rb2d.position + Vector2.up * 1.2f, Quaternion.identity);
+            shootCooldown = 0;
         }
+        shootCooldown += Time.deltaTime;
     }
 
     void ChangeHealth(int amount)
@@ -127,13 +119,22 @@ public class PlayerController : MonoBehaviour
         if (amount < 0)
         {
             if (isInvincible) return;
-            invincibleTimer = timeInvincible;
+
+            isInvincible = true;
+            invincibleCooldown = timeInvincible;
+
+            currentDamage = 1;
+            shootDelay = 0.5f;
+
+            GameObject explosion = Instantiate(explosionPrefab, rb2d.position, Quaternion.identity) as GameObject;
+            Destroy(explosion, 0.8f);
         }
+
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
 
         healthText.text = "Health : ";
         for (int i = 0; i < currentHealth; i++)
-        {
+        { 
             healthText.text += "♥ ";
         }
 

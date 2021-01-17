@@ -11,6 +11,7 @@ TagManager:
   - AttackDamageItem
   - AttackSpeedItem
   - HealthItem
+  - RemoveZone
   layers:
   - Default
   - TransparentFX

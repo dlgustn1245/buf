@@ -191,8 +191,7 @@ MonoBehaviour:
   yMax: 3.5
   timeInvincible: 2
   shootDelay: 0.5
-  speed: 3
-  maxDamage: 3
+  speed: 4
   laser: {fileID: 3282683212411365683, guid: 5b4e7d208a5ce5943a925ae1caf74cd6, type: 3}
   explosionPrefab: {fileID: 7410711703194643236, guid: ed92132fc68bc084cb0f39959b0fa2a4,
     type: 3}

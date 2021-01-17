@@ -970,7 +970,7 @@ MonoBehaviour:
     type: 3}
   xMin: -2.7
   xMax: 2.7
-  yPos: 6.6
+  yPos: 8
 --- !u!4 &2011549570
 Transform:
   m_ObjectHideFlags: 0
@@ -1057,10 +1057,5 @@ PrefabInstance:
       propertyPath: healthText
       value: 
       objectReference: {fileID: 1683008856}
-    - target: {fileID: 6619787204405801375, guid: 8613607eb4a18854c8462859857e4ef7,
-        type: 3}
-      propertyPath: speed
-      value: 4
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8613607eb4a18854c8462859857e4ef7, type: 3}

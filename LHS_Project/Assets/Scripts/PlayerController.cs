@@ -101,6 +101,8 @@ public class PlayerController : MonoBehaviour
                 ++currentDamage;
             }
         }
+        else return;
+
         Destroy(collision.gameObject);
     }
 

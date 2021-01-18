@@ -207,7 +207,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: GameOver
+  m_Text: GameOver!
 --- !u!222 &187549223
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -960,17 +960,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afdaaf3be82421c4db89789ea46c4e44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemy01Prefab: {fileID: 1816567543946992929, guid: 62d02d413701cb340b629d605dd12d5e,
-    type: 3}
-  Enemy02Prefab: {fileID: 7480270590738153805, guid: cf274a1957c9319438f38e3be249acb3,
-    type: 3}
-  Enemy03Prefab: {fileID: 3700301700643933244, guid: 4d64abd1c8cae6849ab4e4f7268896f2,
-    type: 3}
+  enemies:
+  - {fileID: 1816567543946992929, guid: 62d02d413701cb340b629d605dd12d5e, type: 3}
+  - {fileID: 7480270590738153805, guid: cf274a1957c9319438f38e3be249acb3, type: 3}
+  - {fileID: 3700301700643933244, guid: 4d64abd1c8cae6849ab4e4f7268896f2, type: 3}
   AsteroidPrefab: {fileID: 4701148683895876106, guid: ea4e0e23e7320bd479a88359db76a543,
     type: 3}
   xMin: -2.7
   xMax: 2.7
   yPos: 8
+  startWait: 3
+  spawnWait: 1
 --- !u!4 &2011549570
 Transform:
   m_ObjectHideFlags: 0

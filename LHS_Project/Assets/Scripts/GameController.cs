@@ -32,7 +32,7 @@ public class GameController : MonoBehaviour
     void Start()
     {
         readyText.SetActive(false);
-        StartCoroutine("ShowReadyText");
+        StartCoroutine(ShowReadyText());
     }
 
     void Update()
@@ -46,7 +46,7 @@ public class GameController : MonoBehaviour
     public void FighterScored(int num)
     {
         score += num;
-        scoreText.text = "Score : " + score.ToString();
+        scoreText.text = "Score : " + score;
     }
 
     public void FighterDead()

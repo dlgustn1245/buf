@@ -28,11 +28,13 @@ public class PlayerController : MonoBehaviour
     int maxDamage = 3;
     
     Rigidbody2D rb2d;
+    Renderer render;
 
     void Start()
     { 
         rb2d = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
+        render = gameObject.GetComponent<Renderer>();
     }
 
     void Update()
@@ -122,6 +124,8 @@ public class PlayerController : MonoBehaviour
         {
             if (isInvincible) return;
 
+            StartCoroutine(OnDamage());
+
             isInvincible = true;
             invincibleCooldown = timeInvincible;
 
@@ -144,6 +148,20 @@ public class PlayerController : MonoBehaviour
         {
             GameController.Instance.FighterDead();
             Destroy(gameObject);
+        }
+    }
+
+    IEnumerator OnDamage()
+    {
+        int cnt = 0;
+        while(cnt < 4)
+        {
+            render.material.color = new Color(255, 255, 255, 0);
+            yield return new WaitForSeconds(0.25f);
+            render.material.color = new Color(1, 1, 1, 1);
+            yield return new WaitForSeconds(0.25f);
+
+            ++cnt;
         }
     }
 }

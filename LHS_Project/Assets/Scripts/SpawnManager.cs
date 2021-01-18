@@ -27,6 +27,7 @@ public class SpawnManager : MonoBehaviour
     IEnumerator SpawnEnemies()
     {
         yield return new WaitForSeconds(3.0f);
+
         while (true)
         {
             for(int i = 0; i < enemies.Length; i++)
@@ -34,6 +35,7 @@ public class SpawnManager : MonoBehaviour
                 randX = Random.Range(xMin, xMax);
                 GameObject enemy = enemies[Random.Range(0, enemies.Length)];
                 Instantiate(enemy, new Vector2(randX, yPos), Quaternion.identity);
+
                 yield return new WaitForSeconds(spawnWait);
             }
         }

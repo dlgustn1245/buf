@@ -822,6 +822,7 @@ MonoBehaviour:
   gameoverText: {fileID: 187549219}
   readyText: {fileID: 1453298559}
   scoreText: {fileID: 1437535899}
+  healthText: {fileID: 1683008856}
   gameOver: 0
 --- !u!4 &1634906636
 Transform:

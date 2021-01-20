@@ -12,6 +12,7 @@ public class GameController : MonoBehaviour
     public GameObject readyText;
 
     public Text scoreText;
+    public Text healthText;
 
     public bool gameOver = false;
 
@@ -53,6 +54,15 @@ public class GameController : MonoBehaviour
     {
         gameoverText.SetActive(true);
         gameOver = true;
+    }
+
+    public void FighterHealth()
+    {
+        healthText.text = "Health : ";
+        for (int i = 0; i < PlayerController.currentHealth; i++)
+        {
+            healthText.text += "♥ ";
+        }
     }
 
     IEnumerator ShowReadyText()

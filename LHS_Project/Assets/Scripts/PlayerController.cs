@@ -7,6 +7,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public static int currentDamage = 1;
+    public static int currentHealth;
 
     public float xMin, xMax, yMin, yMax;
     public float timeInvincible = 2.0f;
@@ -15,7 +16,6 @@ public class PlayerController : MonoBehaviour
 
     public GameObject laser;
     public GameObject explosionPrefab;
-    public Text healthText;
 
     float horizontal, vertical;
     float shootCooldown;
@@ -23,7 +23,6 @@ public class PlayerController : MonoBehaviour
 
     bool isInvincible = false;
 
-    int currentHealth;
     int maxHealth = 3;
     int maxDamage = 3;
     
@@ -138,11 +137,7 @@ public class PlayerController : MonoBehaviour
 
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
 
-        healthText.text = "Health : ";
-        for (int i = 0; i < currentHealth; i++)
-        { 
-            healthText.text += "♥ ";
-        }
+        GameController.Instance.FighterHealth();
 
         if (currentHealth == 0)
         {

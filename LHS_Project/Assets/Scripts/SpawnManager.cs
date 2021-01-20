@@ -19,6 +19,15 @@ public class SpawnManager : MonoBehaviour
         StartCoroutine(SpawnEnemies());
     }
 
+    void Update()
+    {
+        if (GameController.Instance.gameClear)
+        {
+            CancelInvoke("SpawnAsteroid");
+            StopCoroutine(SpawnEnemies());
+        }
+    }
+
     void SpawnAsteroid()
     {
         randX = Random.Range(xMin, xMax);

@@ -7,16 +7,17 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     public static GameController Instance;
+    public static int score = 0;
 
     public GameObject gameoverText;
     public GameObject readyText;
+    public GameObject clearText;
 
     public Text scoreText;
     public Text healthText;
-
+    
     public bool gameOver = false;
-
-    int score = 0;
+    public bool gameClear = false;
 
     private void Awake()
     {
@@ -42,6 +43,10 @@ public class GameController : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
+        if(score >= 1000)
+        {
+            StageClear();
+        }
     }
 
     public void FighterScored(int num)
@@ -63,6 +68,12 @@ public class GameController : MonoBehaviour
         {
             healthText.text += "♥ ";
         }
+    }
+
+    public void StageClear()
+    {
+        clearText.SetActive(true);
+        gameClear = true;
     }
 
     IEnumerator ShowReadyText()

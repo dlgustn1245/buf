@@ -20,7 +20,7 @@ public class ItemDrop : MonoBehaviour
 
     void Update()
     {
-        if (GameController.Instance.gameOver)
+        if (GameController.Instance.gameOver || GameController.Instance.gameClear)
         {
             Destroy(gameObject);
         }

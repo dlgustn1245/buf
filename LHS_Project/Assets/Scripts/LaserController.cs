@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class LaserController : MonoBehaviour
 {
-    public float speed;
-    public float yMax;
-
     public GameObject flamePrefab;
+
+    public float speed;
+
     Rigidbody2D rb2d;
     
     void Start()
@@ -17,7 +17,7 @@ public class LaserController : MonoBehaviour
 
     void Update()
     {
-        if (GameController.Instance.gameOver)
+        if (GameController.Instance.gameOver || GameController.Instance.gameClear)
         {
             Destroy(gameObject);
         }
